@@ -15,7 +15,6 @@ numbers=int(input("enter the elements :"))
 for i in range(numbers):
 	nlist.append(int(input("enter the values :")))
 print(nlist)      
-nlist= [12,45,62,87,40]
 print("not sorted",nlist)    
 insertionSort(nlist)
 print("sorted",nlist)
