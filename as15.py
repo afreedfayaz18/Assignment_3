@@ -5,7 +5,6 @@ for i in range(numbers):
     A.append(int(input("enter the values :")))
 print(A) 
 import sys 
-print(A)
 for i in range(len(A)): 
     min_idx = i 
     for j in range(i+1, len(A)): 
