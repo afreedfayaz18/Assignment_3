@@ -1,19 +1,25 @@
-import time 
-import math 
+import time
+def timedecor(func):
+	def inner_dec(*x):
+		start=time.time()
+		func(*x)
+		end=time.time()
+		print("time taken:",str((end-start)*1000),"milliseconds")
+	return inner_dec
 
-def calculate_time(func): 
- 
-    def inner1(*args, **kwargs): 
+@timedecor
+def cal_square(*numbers):
+	sqre_list=[]
+	for i in numbers:
+		sqre_list.append(i*i)
+	print(sqre_list)
 
-        begin = time.time() 
-          
-        func(*args, **kwargs)  
-        end = time.time() 
-        print("Total time taken in : ", func.__name__, end - begin) 
-    return inner1 
- 
-@calculate_time
-def factorial(num): 
-    time.sleep(2) 
-    print(math.factorial(num)) 
-factorial(10)
+@timedecor
+def cal_cube(*numbers):
+	cube_list=[]
+	for i in numbers:
+		cube_list.append(i*i*i)
+	print(cube_list)
+
+cal_square(1,2,3)
+cal_cube(3,4,5,6)
